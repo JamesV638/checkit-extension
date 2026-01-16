@@ -91,7 +91,7 @@ MIT License — use freely, attribution appreciated.
 
 ## Author
 
-Built by [YOUR NAME] as a tool for civic engagement and media literacy.
+Built by James VandeHei as a tool for civic engagement and media literacy.
 
 ---
 
