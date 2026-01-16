@@ -1,0 +1,460 @@
+/* CheckIt Floating Panel Styles */
+
+#checkit-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 380px;
+  max-height: calc(100vh - 40px);
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #f0f6fc;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  cursor: move;
+}
+
+.checkit-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkit-logo-icon {
+  width: 24px;
+  height: 24px;
+  background: #58a6ff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0d1117;
+}
+
+.checkit-logo-text {
+  font-weight: 700;
+  font-size: 15px;
+  color: #f0f6fc;
+}
+
+.checkit-close {
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.checkit-close:hover {
+  background: #21262d;
+  color: #f0f6fc;
+}
+
+.checkit-content {
+  padding: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+
+/* Loading */
+.checkit-loading {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.checkit-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #21262d;
+  border-top-color: #58a6ff;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  animation: checkit-spin 1s linear infinite;
+}
+
+@keyframes checkit-spin {
+  to { transform: rotate(360deg); }
+}
+
+.checkit-loading p {
+  margin: 0;
+  font-size: 14px;
+  color: #f0f6fc;
+}
+
+.checkit-loading-sub {
+  color: #8b949e !important;
+  font-size: 12px !important;
+  margin-top: 4px !important;
+}
+
+/* Error */
+.checkit-error {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.checkit-error p {
+  margin: 0 0 12px 0;
+  color: #8b949e;
+  font-size: 13px;
+}
+
+.checkit-error button {
+  background: #21262d;
+  color: #f0f6fc;
+  border: 1px solid #30363d;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.checkit-error button:hover {
+  background: #30363d;
+}
+
+/* Verdict */
+.checkit-verdict {
+  text-align: center;
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.checkit-verdict-icon {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.checkit-verdict-label {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.checkit-verdict.verdict-true {
+  background: rgba(63, 185, 80, 0.15);
+  border: 2px solid #3fb950;
+  color: #3fb950;
+}
+
+.checkit-verdict.verdict-mostly-true {
+  background: rgba(63, 185, 80, 0.1);
+  border: 2px solid #3fb950;
+  color: #3fb950;
+}
+
+.checkit-verdict.verdict-mixed {
+  background: rgba(210, 153, 34, 0.15);
+  border: 2px solid #d29922;
+  color: #d29922;
+}
+
+.checkit-verdict.verdict-mostly-false {
+  background: rgba(248, 81, 73, 0.1);
+  border: 2px solid #f85149;
+  color: #f85149;
+}
+
+.checkit-verdict.verdict-false {
+  background: rgba(248, 81, 73, 0.15);
+  border: 2px solid #f85149;
+  color: #f85149;
+}
+
+.checkit-verdict.verdict-unverified {
+  background: rgba(139, 148, 158, 0.15);
+  border: 2px solid #8b949e;
+  color: #8b949e;
+}
+
+.checkit-explanation {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #8b949e;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+/* Sections */
+.checkit-section {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #21262d;
+}
+
+.checkit-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.checkit-section h4 {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #58a6ff;
+  margin: 0 0 10px 0;
+}
+
+/* Source item */
+.checkit-source-item {
+  background: #161b22;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #30363d;
+}
+
+.checkit-source-item a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.checkit-source-item a:hover {
+  text-decoration: underline;
+}
+
+.checkit-badges {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.checkit-badge {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.checkit-badge.lean-left {
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  color: #58a6ff;
+}
+
+.checkit-badge.lean-center {
+  background: rgba(139, 148, 158, 0.1);
+  border: 1px solid rgba(139, 148, 158, 0.3);
+  color: #8b949e;
+}
+
+.checkit-badge.lean-right {
+  background: rgba(248, 81, 73, 0.1);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  color: #f85149;
+}
+
+.checkit-badge.checkit-cred {
+  background: rgba(210, 153, 34, 0.1);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+  color: #d29922;
+}
+
+/* Verification items */
+.checkit-verify-item {
+  background: #161b22;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #30363d;
+  margin-bottom: 8px;
+}
+
+.checkit-verify-item:last-child {
+  margin-bottom: 0;
+}
+
+.checkit-verify-item.supports {
+  border-left: 3px solid #3fb950;
+}
+
+.checkit-verify-item.refutes {
+  border-left: 3px solid #f85149;
+}
+
+.checkit-verify-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.checkit-verify-icon {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.checkit-verify-item.supports .checkit-verify-icon {
+  color: #3fb950;
+}
+
+.checkit-verify-item.refutes .checkit-verify-icon {
+  color: #f85149;
+}
+
+.checkit-verify-header a {
+  color: #f0f6fc;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.checkit-verify-header a:hover {
+  color: #58a6ff;
+}
+
+.checkit-verify-finding {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #8b949e;
+  margin: 6px 0 0 18px;
+}
+
+/* Facts */
+.checkit-facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checkit-facts li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #8b949e;
+}
+
+.checkit-facts li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+/* Flags */
+.checkit-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.checkit-flag {
+  display: inline-block;
+  background: rgba(210, 153, 34, 0.1);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+  color: #d29922;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Partisan Coverage */
+.checkit-partisan-item {
+  background: #161b22;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #30363d;
+  margin-bottom: 8px;
+}
+
+.checkit-partisan-item:last-child {
+  margin-bottom: 0;
+}
+
+.checkit-partisan-item.left {
+  border-left: 3px solid #58a6ff;
+}
+
+.checkit-partisan-item.right {
+  border-left: 3px solid #f85149;
+}
+
+.checkit-partisan-label {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.checkit-partisan-item.left .checkit-partisan-label {
+  color: #58a6ff;
+}
+
+.checkit-partisan-item.right .checkit-partisan-label {
+  color: #f85149;
+}
+
+.checkit-partisan-item a {
+  display: block;
+  color: #f0f6fc;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.checkit-partisan-item a:hover {
+  color: #58a6ff;
+}
+
+.checkit-partisan-item p {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #8b949e;
+  margin: 0;
+}
+
+/* Scrollbar */
+.checkit-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.checkit-content::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.checkit-content::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+.checkit-content::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheckIt</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">✓</span>
+        <span class="logo-text">CheckIt</span>
+      </div>
+      <button class="settings-btn" id="settingsBtn">⚙</button>
+    </header>
+
+    <!-- Settings Panel (hidden by default) -->
+    <div class="settings-panel hidden" id="settingsPanel">
+      <label for="apiKey">Anthropic API Key</label>
+      <input type="password" id="apiKey" placeholder="sk-ant-..." />
+      <button class="save-btn" id="saveKeyBtn">Save Key</button>
+      <p class="settings-note">Your key is stored locally and never shared.</p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Welcome State -->
+      <div class="state welcome-state" id="welcomeState">
+        <div class="welcome-icon">🔍</div>
+        <h2>Investigate Any Claim</h2>
+        <p>Highlight text on any webpage, right-click, and select <strong>"CheckIt: Investigate Claim"</strong></p>
+        <div class="how-it-works">
+          <div class="step">
+            <span class="step-num">1</span>
+            <span>Highlight a claim</span>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <span>Right-click → CheckIt</span>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <span>Get verified results here</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div class="state loading-state hidden" id="loadingState">
+        <div class="loader"></div>
+        <p class="loading-text">Investigating claim...</p>
+        <p class="loading-subtext" id="loadingSubtext">Searching for sources</p>
+      </div>
+
+      <!-- Results State -->
+      <div class="state results-state hidden" id="resultsState">
+        <!-- Verdict -->
+        <div class="section verdict-section" id="verdictSection">
+          <div class="verdict-badge" id="verdictBadge">? Checking...</div>
+          <p class="verdict-explanation" id="verdictExplanation"></p>
+        </div>
+
+        <!-- Claim -->
+        <div class="section claim-section">
+          <h3>Claim</h3>
+          <p class="claim-text" id="claimText"></p>
+        </div>
+
+        <!-- Original Source -->
+        <div class="section original-source-section" id="originalSourceSection">
+          <h3>Original Source</h3>
+          <div id="originalSourceContent"></div>
+        </div>
+
+        <!-- Verification Sources -->
+        <div class="section verification-section" id="verificationSection">
+          <h3>Verified By</h3>
+          <div id="verificationList"></div>
+        </div>
+
+        <!-- Key Facts -->
+        <div class="section facts-section">
+          <h3>Key Facts</h3>
+          <ul id="factsList"></ul>
+        </div>
+
+        <!-- Context Flags -->
+        <div class="section flags-section hidden" id="flagsSection">
+          <h3>Context Flags</h3>
+          <div id="flagsList"></div>
+        </div>
+
+        <!-- New Check Button -->
+        <button class="new-check-btn" id="newCheckBtn">Check Another Claim</button>
+      </div>
+
+      <!-- Error State -->
+      <div class="state error-state hidden" id="errorState">
+        <div class="error-icon">⚠</div>
+        <h3>Something went wrong</h3>
+        <p id="errorText"></p>
+        <button class="retry-btn" id="retryBtn">Try Again</button>
+      </div>
+
+      <!-- No API Key State -->
+      <div class="state nokey-state hidden" id="nokeyState">
+        <div class="nokey-icon">🔑</div>
+        <h3>API Key Required</h3>
+        <p>Click the gear icon above to add your Anthropic API key.</p>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>CheckIt cross-references multiple sources to verify claims.</p>
+    </footer>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
